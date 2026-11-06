@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOIR | 테슬라 모델 YL & 주니퍼 출고 준비 리스트 (2026)</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    :root {
+      --bg-main: #f6f5f2;
+      --bg-card: #ffffff;
+      --bg-subtle: #efede8;
+      --bg-accent: #141413;
+      --text-primary: #141413;
+      --text-secondary: #5e5d59;
+      --text-muted: #8c8a84;
+      --border-color: #e4e2dc;
+      --border-strong: #c9c6be;
+      --must-bg: #141413;
+      --must-text: #ffffff;
+      --nice-bg: #ebe9e2;
+      --nice-text: #4a4945;
+      --done-bg: #e6f4ea;
+      --done-text: #137333;
+      --done-border: #ceead6;
+      --cart-bg: #fef7e0;
+      --cart-text: #b06000;
+      --cart-border: #feefc3;
+      --memo-bg: #f8f6f0;
+      --memo-border: #d5d0c5;
+      --naver-color: #03c75a;
+      --ali-color: #e62e04;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 2px 8px rgba(20, 20, 19, 0.04);
+      --shadow-md: 0 8px 24px rgba(20, 20, 19, 0.07);
+      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg-main: #0f0f0f;
+      --bg-card: #181818;
+      --bg-subtle: #242423;
+      --bg-accent: #f4f3ef;
+      --text-primary: #f4f3ef;
+      --text-secondary: #a6a49e;
+      --text-muted: #6e6d68;
+      --border-color: #2a2a28;
+      --border-strong: #3e3e3b;
+      --must-bg: #f4f3ef;
+      --must-text: #141413;
+      --nice-bg: #2a2a28;
+      --nice-text: #c7c5be;
+      --done-bg: rgba(19, 115, 51, 0.25);
+      --done-text: #81c995;
+      --done-border: rgba(129, 201, 149, 0.3);
+      --cart-bg: rgba(176, 96, 0, 0.22);
+      --cart-text: #fdd663;
+      --cart-border: rgba(253, 214, 99, 0.3);
+      --memo-bg: #201f1d;
+      --memo-border: #3d3b36;
+      --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: inherit;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246, 245, 242, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+    [data-theme="dark"] .site-header {
+      background: rgba(15, 15, 15, 0.85);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 16px;
+      background-color: var(--border-strong);
+    }
+
+    .brand-sub {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-pill {
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+    .nav-pill:hover {
+      color: var(--text-primary);
+      background-color: var(--bg-subtle);
+    }
+    .nav-pill.active {
+      background-color: var(--bg-accent);
+      color: var(--must-text);
+    }
+
+    .theme-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .theme-btn:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-bottom: 36px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background-color: var(--bg-subtle);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    /* Dashboard / Budget Summary */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .stat-card.active-stat {
+      outline: 2px solid var(--text-primary);
+    }
+
+    .stat-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .stat-badge {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      color: var(--text-primary);
+    }
+
+    .stat-value {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Progress Bar & Notice Banner */
+    .utility-bar {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .progress-box, .reminder-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 10px;
+      background-color: var(--bg-subtle);
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .progress-fill-done {
+      background-color: #188038;
+      height: 100%;
+      transition: width 0.4s ease;
+    }
+    .progress-fill-must {
+      background-color: var(--text-primary);
+      height: 100%;
+      opacity: 0.75;
+      transition: width 0.4s ease;
+    }
+
+    .progress-legend {
+      display: flex;
+      gap: 16px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .reminder-box {
+      background-color: var(--memo-bg);
+      border: 1px dashed var(--memo-border);
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .reminder-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .reminder-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--cart-text);
+      text-transform: uppercase;
+    }
+    .reminder-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .reminder-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* Controls / Filter Bar */
+    .controls-section {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .controls-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 240px;
+      max-width: 420px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 36px 10px 40px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-size: 0.88rem;
+      outline: none;
+      transition: var(--transition);
+    }
+    .search-input:focus {
+      border-color: var(--text-primary);
+      background-color: var(--bg-card);
+    }
+
+    .clear-search {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: none;
+      padding: 4px;
+    }
+
+    .filter-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .segmented-group {
+      display: inline-flex;
+      background-color: var(--bg-main);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+    }
+
+    .seg-btn {
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+    .seg-btn.active {
+      background-color: var(--bg-card);
+      color: var(--text-primary);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    .sort-select {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .reset-btn {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+    .reset-btn:hover {
+      background-color: var(--bg-subtle);
+      color: var(--text-primary);
+    }
+
+    /* Category Pills */
+    .category-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .cat-pill {
+      padding: 7px 15px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      background-color: var(--bg-main);
+      color: var(--text-secondary);
+      border: 1px solid transparent;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cat-pill:hover {
+      border-color: var(--border-strong);
+      color: var(--text-primary);
+    }
+    .cat-pill.active {
+      background-color: var(--bg-accent);
+      color: var(--must-text);
+    }
+    .cat-count {
+      font-size: 0.72rem;
+      opacity: 0.75;
+      font-weight: 700;
+    }
+
+    /* Active Result Summary Bar */
+    .results-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      padding: 0 4px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .results-info {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .results-info strong {
+      color: var(--text-primary);
+      font-weight: 800;
+    }
+
+    .view-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .view-btn {
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-card);
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+    .view-btn.active {
+      border-color: var(--text-primary);
+      color: var(--text-primary);
+      background-color: var(--bg-subtle);
+    }
+
+    /* Product Cards Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 18px;
+      margin-bottom: 56px;
+    }
+
+    .product-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+    .product-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .product-card.is-done {
+      border-left: 4px solid #188038;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .badge-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .no-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background-color: var(--bg-main);
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .priority-badge {
+      font-size: 0.73rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 6px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .priority-must {
+      background-color: var(--must-bg);
+      color: var(--must-text);
+    }
+    .priority-nice {
+      background-color: var(--nice-bg);
+      color: var(--nice-text);
+    }
+
+    .status-btn {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition);
+    }
+    .status-done {
+      background-color: var(--done-bg);
+      color: var(--done-text);
+      border: 1px solid var(--done-border);
+    }
+    .status-cart {
+      background-color: var(--cart-bg);
+      color: var(--cart-text);
+      border: 1px solid var(--cart-border);
+    }
+    .status-btn:hover {
+      transform: scale(1.03);
+      filter: brightness(0.96);
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-meta-tags {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .model-tag {
+      color: var(--text-secondary);
+      background-color: var(--bg-subtle);
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .store-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .store-naver {
+      color: var(--naver-color);
+      background-color: rgba(3, 199, 90, 0.1);
+    }
+    .store-ali {
+      color: var(--ali-color);
+      background-color: rgba(230, 46, 4, 0.08);
+    }
+
+    .card-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+    }
+
+    .card-summary {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .card-fullname {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      background-color: var(--bg-main);
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      line-height: 1.4;
+      word-break: keep-all;
+      border: 1px solid var(--border-color);
+    }
+
+    .card-option-box {
+      background-color: var(--memo-bg);
+      border-left: 3px solid var(--text-primary);
+      padding: 9px 12px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.8rem;
+      color: var(--text-primary);
+      white-space: pre-line;
+      line-height: 1.45;
+    }
+    .card-option-label {
+      font-weight: 800;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+      gap: 12px;
+    }
+
+    .price-block {
+      display: flex;
+      flex-direction: column;
+    }
+    .price-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .price-val {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .buy-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      background-color: var(--bg-accent);
+      color: var(--must-text);
+      transition: var(--transition);
+    }
+    .buy-link:hover {
+      opacity: 0.88;
+      transform: translateX(2px);
+    }
+
+    /* Table View (Spreadsheet Mode) */
+    .table-wrapper {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      margin-bottom: 56px;
+      display: none;
+      box-shadow: var(--shadow-sm);
+    }
+
+    table.soir-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .soir-table th {
+      background-color: var(--bg-subtle);
+      color: var(--text-secondary);
+      font-weight: 700;
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    .soir-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+    }
+
+    .soir-table tr:last-child td {
+      border-bottom: none;
+    }
+    .soir-table tr:hover td {
+      background-color: var(--bg-main);
+    }
+
+    /* Section Divider & Buying Guide */
+    .section-header {
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .section-eyebrow {
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .guide-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .guide-q {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .guide-a {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Explore More Banner (SOIR Reference Link) */
+    .soir-banner {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .soir-banner-text h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .soir-banner-text p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .soir-banner-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .outline-btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border-strong);
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    .outline-btn:hover {
+      background-color: var(--bg-subtle);
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1px dashed var(--border-strong);
+      margin-bottom: 48px;
+      display: none;
+    }
+    .empty-state p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 32px 24px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background-color: var(--bg-card);
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (max-width: 960px) {
+      .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .utility-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        padding: 0 16px;
+      }
+      .brand-sub {
+        display: none;
+      }
+      .brand-divider {
+        display: none;
+      }
+      .container {
+        padding: 24px 16px 60px;
+      }
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .controls-top {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-wrap {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-group">
+        <a href="#" class="brand-logo" onclick="resetAllFilters(); return false;">SOIR</a>
+        <span class="brand-divider"></span>
+        <span class="brand-sub">테슬라 모델 YL · 주니퍼 출고 준비 리스트</span>
+      </div>
+      <nav class="header-nav">
+        <a href="#products-section" class="nav-pill active">출고리스트</a>
+        <a href="#guide-section" class="nav-pill">비교 · 체크포인트</a>
+        <a href="https://bysoir.com/yl" target="_blank" rel="noopener noreferrer" class="nav-pill">SOIR 원본 ↗</a>
+        <button class="theme-btn" id="themeToggle" title="다크/라이트 모드 전환" aria-label="테마 전환">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-eyebrow">
+        <span>테슬라 모델 YL (6인승) · 주니퍼 중심 · 공용 제품 포함</span>
+      </div>
+      <div class="hero-title-row">
+        <h1 class="hero-title">테슬라 YL 구매용품 컬렉션</h1>
+        <span class="hero-meta">2026 출고 준비 시트 기준 · 6개 분류 · 30개 제품</span>
+      </div>
+      <p class="hero-desc">
+        첨부된 <strong>테슬라YL 구매용품_2026</strong> 문서의 30개 아이템과 예산, 우선순위(Must / Nice), 옵션 메모를 한눈에 비교하고 관리할 수 있도록 제작된 SOIR 스타일 큐레이션 페이지입니다. 카드 우측 상단의 상태 배지를 클릭하면 <strong>구매 완료 / 장바구니</strong> 상태를 실시간으로 전환하며 예산을 시뮬레이션할 수 있습니다.
+      </p>
+    </section>
+
+    <!-- Interactive Budget Dashboard -->
+    <section class="dashboard-grid" aria-label="예산 및 구매 현황 요약">
+      <div class="stat-card" id="stat-all" onclick="applyQuickStatFilter('all')">
+        <div class="stat-top">
+          <span>전체 리스트 합계</span>
+          <span class="stat-badge" id="count-all">30개</span>
+        </div>
+        <div class="stat-value" id="price-all">1,097,589원</div>
+        <div class="stat-sub">
+          <span>Must 21개 · Nice 9개</span>
+          <span>전체 보기 →</span>
+        </div>
+      </div>
+
+      <div class="stat-card" id="stat-must" onclick="applyQuickStatFilter('Must')">
+        <div class="stat-top">
+          <span>필수 구매 (Must)</span>
+          <span class="stat-badge" id="count-must">21개</span>
+        </div>
+        <div class="stat-value" id="price-must">795,438원</div>
+        <div class="stat-sub">
+          <span>전체 예산의 72.5%</span>
+          <span>Must 필터 →</span>
+        </div>
+      </div>
+
+      <div class="stat-card" id="stat-done" onclick="applyQuickStatFilter('구매 완료')">
+        <div class="stat-top">
+          <span>구매 완료 (결제됨)</span>
+          <span class="stat-badge" id="count-done" style="background: var(--done-bg); color: var(--done-text);">1개</span>
+        </div>
+        <div class="stat-value" id="price-done" style="color: var(--done-text);">254,900원</div>
+        <div class="stat-sub">
+          <span id="sub-done">진행률 23.2% (금액 기준)</span>
+          <span>완료 품목 →</span>
+        </div>
+      </div>
+
+      <div class="stat-card" id="stat-cart" onclick="applyQuickStatFilter('장바구니')">
+        <div class="stat-top">
+          <span>장바구니 (미결제 잔여)</span>
+          <span class="stat-badge" id="count-cart" style="background: var(--cart-bg); color: var(--cart-text);">29개</span>
+        </div>
+        <div class="stat-value" id="price-cart">842,689원</div>
+        <div class="stat-sub">
+          <span>추가 검토 품목 포함</span>
+          <span>장바구니 필터 →</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress & Pending Item Reminder -->
+    <section class="utility-bar">
+      <div class="progress-box">
+        <div class="progress-header">
+          <span>출고 용품 준비 달성률 (실시간 시뮬레이션)</span>
+          <span id="progress-text">금액 기준 23.2% 완료 (254,900원 / 1,097,589원)</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill-done" id="bar-done" style="width: 23.2%;"></div>
+          <div class="progress-fill-must" id="bar-must" style="width: 49.3%;"></div>
+        </div>
+        <div class="progress-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:#188038;"></span>구매 완료</span>
+          <span class="legend-item"><span class="legend-dot" style="background:var(--text-primary); opacity:0.75;"></span>장바구니 (Must 필수)</span>
+          <span class="legend-item"><span class="legend-dot" style="background:var(--border-strong);"></span>장바구니 (Nice 선택)</span>
+        </div>
+      </div>
+
+      <div class="reminder-box">
+        <div class="reminder-content">
+          <span class="reminder-tag">📌 시트 하단 미확정 메모 (Row 50)</span>
+          <div class="reminder-title">별도 구매 검토 필요: 무선 충전기</div>
+          <div class="reminder-desc">No.20 마그네틱 실리콘 폰 홀더 옵션 메모 — "다른 타입도 추가 검토 필요, 무선 충전기 별도 구입 필요"</div>
+        </div>
+        <button class="reset-btn" onclick="focusItemByNo(20)" style="white-space: nowrap;">No.20 보기 →</button>
+      </div>
+    </section>
+
+    <!-- Controls & Filtering -->
+    <section class="controls-section" id="products-section">
+      <div class="controls-top">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="제품명, 옵션 메모, 번호(예: 10), 키워드 검색..." />
+          <button class="clear-search" id="clearSearchBtn" onclick="clearSearch()">✕</button>
+        </div>
+
+        <div class="filter-actions">
+          <div class="segmented-group" role="group" aria-label="우선순위 필터">
+            <button class="seg-btn active" data-priority="all" onclick="setPriorityFilter('all')">전체</button>
+            <button class="seg-btn" data-priority="Must" onclick="setPriorityFilter('Must')">Must (필수)</button>
+            <button class="seg-btn" data-priority="Nice" onclick="setPriorityFilter('Nice')">Nice (선호)</button>
+          </div>
+
+          <div class="segmented-group" role="group" aria-label="구매 상태 필터">
+            <button class="seg-btn active" data-status="all" onclick="setStatusFilter('all')">상태 전체</button>
+            <button class="seg-btn" data-status="구매 완료" onclick="setStatusFilter('구매 완료')">구매 완료</button>
+            <button class="seg-btn" data-status="장바구니" onclick="setStatusFilter('장바구니')">장바구니</button>
+          </div>
+
+          <select id="sortSelect" class="sort-select" onchange="renderProducts()" aria-label="정렬 기준">
+            <option value="no-asc">번호순 (No.1 → 30)</option>
+            <option value="price-desc">가격 높은순</option>
+            <option value="price-asc">가격 낮은순</option>
+            <option value="must-first">Must 우선 정렬</option>
+          </select>
+
+          <button class="reset-btn" onclick="resetAllFilters()">초기화</button>
+        </div>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="category-pills" id="categoryPills">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Result Info & View Switcher -->
+    <div class="results-bar">
+      <div class="results-info" id="resultsInfo">
+        총 <strong>30개</strong> 제품 · 선택 합계 <strong>1,097,589원</strong>
+      </div>
+      <div class="view-toggle">
+        <button class="view-btn active" id="btnCardView" onclick="setViewMode('card')">카드 뷰</button>
+        <button class="view-btn" id="btnTableView" onclick="setViewMode('table')">시트 테이블 뷰</button>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="emptyState">
+      <p>일치하는 제품이 없어요. 다른 검색어나 필터 조건을 선택해 보세요.</p>
+      <button class="buy-link" onclick="resetAllFilters()">전체 목록 다시 보기</button>
+    </div>
+
+    <!-- Cards Grid -->
+    <section class="products-grid" id="productsGrid" aria-live="polite"></section>
+
+    <!-- Spreadsheet Table View -->
+    <section class="table-wrapper" id="tableWrapper">
+      <table class="soir-table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>구분</th>
+            <th>상태 (클릭 변경)</th>
+            <th>분류</th>
+            <th>제품명 / 원본 상품명</th>
+            <th>옵션 및 검토 메모</th>
+            <th style="text-align:right;">가격 (원)</th>
+            <th style="text-align:center;">링크</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </section>
+
+    <!-- Curated Comparison & Checkpoints Section (SOIR Style) -->
+    <section id="guide-section">
+      <div class="section-header">
+        <span class="section-eyebrow">CHECKPOINTS & COMPARISON</span>
+        <h2 class="section-title">용도별로 비교하고 중복·옵션 체크하기</h2>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-q">💡 중복 후보 1: 전면 공조 방충망 (No.4 vs No.5)</div>
+          <p class="guide-a">
+            <strong>No.4(14,350원)</strong>와 <strong>No.5(19,150원)</strong>는 동일한 알리익스프레스 상품 페이지 내 서로 다른 세부 옵션(기본형 vs 업그레이드 필터/구성)입니다. 실제 결제 전 장바구니에서 1개 옵션만 남기고 정리하면 예산을 절약할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-q">💡 중복 후보 2: 6인승 시트 등받이 보호 매트 (No.12 vs No.13)</div>
+          <p class="guide-a">
+            <strong>No.12(19,400원)</strong>와 <strong>No.13(42,200원)</strong> 모두 모델 YL 6인승 시트 뒷면 가죽 킥 방지 패드입니다. 적용 좌석 수(1·2열 전체 여부)와 가죽 마감 디테일을 비교하여 한 가지만 선택하는 것을 권장합니다.
+          </p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-q">💡 중복 후보 3: 16인치 디스플레이 보호필름 (No.27 vs No.30)</div>
+          <p class="guide-a">
+            국내 배송 <strong>아임반 저반사 보호필름 1+2열 세트(No.27, 19,120원)</strong>와 알리 직구 <strong>YZ 매트 강화유리 1+2열 세트(No.30, 27,350원)</strong>가 함께 담겨 있습니다. 필름 타입(PET/저반사 코팅)과 강화유리 중 선호하는 재질 1종을 선택하세요.
+          </p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-q">💡 휴대폰 거치대 & 무선 충전기 조합 (No.20 · No.25 · Row 50)</div>
+          <p class="guide-a">
+            <strong>No.20 실리콘 거치대(11,086원, Must)</strong>와 <strong>No.25 360도 금속 거치대(21,807원, Nice)</strong>가 후보로 등록되어 있으며, 시트 하단에 <strong>'무선 충전기'</strong>가 별도 메모되어 있습니다. 마운트 베이스 확정 후 맥세이프 무선 충전 헤드를 추가하세요.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOIR Reference Banner -->
+    <section class="soir-banner">
+      <div class="soir-banner-text">
+        <h3>SOIR | 테슬라 제품 모음 & 출고 가이드</h3>
+        <p>첨부 문서 하단(Row 53)에 기록된 레퍼런스 홈페이지에서 더 많은 차종별 용품과 설치 영상을 확인할 수 있습니다.</p>
+      </div>
+      <div class="soir-banner-links">
+        <a href="https://bysoir.com/yl" target="_blank" rel="noopener noreferrer" class="buy-link">SOIR YL 페이지 바로가기 ↗</a>
+        <a href="https://bysoir.com/accessories-guide.html" target="_blank" rel="noopener noreferrer" class="outline-btn">출고 준비 가이드 ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>SOIR | 테슬라 모델 YL 구매용품 리스트 (2026)</strong> · 첨부 엑셀 문서(테슬라YL 구매용품_2026.xlsx) 기반 제작
+      </div>
+      <div>
+        상태 변경 내역은 브라우저(LocalStorage)에 자동 저장됩니다 · <button onclick="resetSavedStatus()" style="text-decoration:underline; color:inherit;">초기 시트 상태로 복원</button>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const INITIAL_ITEMS = [
+  {
+    "no": 1,
+    "priority": "Must",
+    "status": "구매 완료",
+    "shortTitle": "티슬릭스 TPE 풀커버 카매트 세트",
+    "fullName": "티슬릭스 테슬라 [풀 세트] TPE 카매트 발 바닥 풀커버 모델 Y 주니퍼",
+    "category": "발매트 · 시트보호",
+    "models": [
+      "주니퍼",
+      "YL"
+    ],
+    "store": "네이버 스마트스토어",
+    "summary": "발바닥부터 트렁크·프렁크까지 빈틈없이 감싸는 풀커버 TPE 매트 세트",
+    "price": 254900,
+    "url": "https://smartstore.naver.com/tslix/products/13642517878?tr=oyp",
+    "option": "발매트 포함, 트렁크 매트 + 프렁크 매트 포함",
+    "icon": "layers"
+  },
+  {
+    "no": 2,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "티슬릭스 도어실 & 레일 보호 커버",
+    "fullName": "티슬릭스 도어실 모델 Y 주니퍼 YL",
+    "category": "실내 · 트렁크 보호",
+    "models": [
+      "주니퍼",
+      "YL"
+    ],
+    "store": "네이버 스마트스토어",
+    "summary": "승하차 시 발이 자주 닿는 도어실과 2·3열 시트 레일 및 하단 완벽 보호",
+    "price": 140000,
+    "url": "https://smartstore.naver.com/tslix/products/13850432020?nl-au=dfa09c54017d493ebb5fe44767bd2355",
+    "option": "도어실 + 2열/3열 레일 커버 + 3열시트 하단 커버",
+    "icon": "shield"
+  },
+  {
+    "no": 3,
+    "priority": "Nice",
+    "status": "장바구니",
+    "shortTitle": "YZ 도어 사이드 스웨이드 수납함",
+    "fullName": "테슬라 모델 Y 3 YL 주니퍼 하이랜드용 YZ 차량 도어 사이드 수납함",
+    "category": "수납 · 정리",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "도어 포켓 내부 오염 방지 및 고급스러운 스웨이드 질감의 수납 트레이",
+    "price": 39500,
+    "url": "https://ko.aliexpress.com/item/1005008904979802.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW+94048%21KRW+39500%21%21KRW+38327%21%21%21%402140f2bd17939722037321614e0f26%2112000057991907498%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "도어 옆 스웨이드 수납함\n--> 추가 검토 필요 (DC 콤보를 같이 수납하는 상품 존재)",
+    "icon": "archive"
+  },
+  {
+    "no": 4,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "YZ 전면 공조기 공기 흡입구 방충망 (타입 A)",
+    "fullName": "YZ 테슬라 모델 Y/YL 2025-2026 주니퍼 방충 전면 공조 방충망용 공기 흡입구 커버",
+    "category": "외장 · 안전 · 관리",
+    "models": [
+      "YL",
+      "주니퍼"
+    ],
+    "store": "AliExpress",
+    "summary": "보닛 하단 공조 공기 흡입구에 낙엽·벌레 등 이물질 유입을 차단하는 커버",
+    "price": 14350,
+    "url": "https://ko.aliexpress.com/item/1005008785013921.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW%2034167%21KRW%2014350%21%21KRW%2013917%21%21%21%402140f2bd17939722037321614e0f26%2112000046674729388%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "wind"
+  },
+  {
+    "no": 5,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "YZ 전면 공조기 공기 흡입구 방충망 (타입 B)",
+    "fullName": "YZ 테슬라 모델 Y/YL 2025-2026 주니퍼 방충 전면 공조 방충망용 공기 흡입구 커버",
+    "category": "외장 · 안전 · 관리",
+    "models": [
+      "YL",
+      "주니퍼"
+    ],
+    "store": "AliExpress",
+    "summary": "전면 공조 시스템 보호를 위한 방충망 그릴 커버 (상세 옵션 비교용)",
+    "price": 19150,
+    "url": "https://ko.aliexpress.com/item/1005008785013921.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW%2045595%21KRW%2019150%21%21KRW%2018578%21%21%21%402140f2bd17939722037321614e0f26%2112000047806816041%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "wind"
+  },
+  {
+    "no": 6,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "YZ 리어 트렁크 측면 TPE 안티킥 패드",
+    "fullName": "YZ 테슬라 모델 Y/YL 주니퍼 2025-2026 리어 트렁크 측면 안티킥 패드 TPE 전체 커버 보호 키트 자동차 안티 더티 패드 액세서리용",
+    "category": "실내 · 트렁크 보호",
+    "models": [
+      "YL",
+      "주니퍼"
+    ],
+    "store": "AliExpress",
+    "summary": "트렁크 적재 시 긁히기 쉬운 양측면 부직포 영역을 보호하는 TPE 커버 키트",
+    "price": 54840,
+    "url": "https://ko.aliexpress.com/item/1005009386027334.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW%20142376%21KRW%2054840%21%21KRW%2053192%21%21%21%402140f2bd17939722037321614e0f26%2112000058017513588%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "box"
+  },
+  {
+    "no": 7,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "스냅핏 합금 가속·브레이크 페달 커버",
+    "fullName": "테슬라 모델 3 Y/YL 하이랜드 주니퍼 2019-2026 풋 페달 스냅핏 합금 가스 연료 브레이크 가속 페달 커버 설치",
+    "category": "외장 · 안전 · 관리",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "순정 퍼포먼스 감성을 더해주는 미끄럼 방지 알루미늄 합금 풋 페달 세트",
+    "price": 18150,
+    "url": "https://ko.aliexpress.com/item/1005009682377032.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW+43224%21KRW+18150%21%21KRW+17606%21%21%21%402140f2bd17939722037321614e0f26%2112000049851701122%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "zap"
+  },
+  {
+    "no": 8,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "YZ 트렁크 좌우 사이드 플로킹 수납함",
+    "fullName": "YZ 테슬라 모델 Y/YL 주니퍼 2025-2026 플로킹 매트 커버 정리함을 위한 차량 트렁크 왼쪽 오른쪽 정리 패킷 보관함",
+    "category": "수납 · 정리",
+    "models": [
+      "YL",
+      "주니퍼"
+    ],
+    "store": "AliExpress",
+    "summary": "트렁크 양옆 깊은 포켓 공간을 깔끔하게 분리·활용하는 플로킹 커버 보관함",
+    "price": 39500,
+    "url": "https://ko.aliexpress.com/item/1005008797079121.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW+94048%21KRW+39500%21%21KRW+38313%21%21%21%402140f2bd17939722037321614e0f26%2112000058052395962%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "inbox"
+  },
+  {
+    "no": 9,
+    "priority": "Nice",
+    "status": "장바구니",
+    "shortTitle": "YZ 암레스트 리어 에어 아웃렛 정리함",
+    "fullName": "YZ 테슬라 모델 3/Y 하이랜드 주니퍼 2025 암레스트 박스 리어 에어 아웃렛 정리함",
+    "category": "수납 · 정리",
+    "models": [
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "센터 콘솔 후면 2열 송풍구 하단 공간을 활용한 미니 수납 오거나이저",
+    "price": 24850,
+    "url": "https://ko.aliexpress.com/item/1005009456710722.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW%2059167%21KRW%2024850%21%21KRW%2024110%21%21%21%402140f2bd17939730037857221e0f26%2112000049183147396%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "grid"
+  },
+  {
+    "no": 10,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "YZ 그래핀 허니콤 마그네틱 루프 선쉐이드",
+    "fullName": "YZ 적용 테슬라 모델 YL 2026 그래핀 선쉐이드 블랙 루프 마그네틱 패스너 허니콤 선쉐이드 자동차 리어 프론트 선루프 유리용",
+    "category": "차양 · 인테리어",
+    "models": [
+      "YL (2026)"
+    ],
+    "store": "AliExpress",
+    "summary": "자석 패스너 방식으로 탈부착이 간편한 그래핀 허니콤 단열 블랙 선루프 쉐이드",
+    "price": 56263,
+    "url": "https://ko.aliexpress.com/item/1005012033108845.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW+145224%21KRW+56263%21%21KRW+54574%21%21%21%402140f2bd17939730037857221e0f26%2112000057374011620%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "sun"
+  },
+  {
+    "no": 11,
+    "priority": "Nice",
+    "status": "장바구니",
+    "shortTitle": "VJOYCAR 2세대 스위블 모니터 회전 마운트",
+    "fullName": "VJOYCAR 2세대 신형 회전 마운트 키트 (스위블 모니터)",
+    "category": "화면 · 거치 · 충전",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "중앙 디스플레이를 상하좌우 원하는 시야각으로 조절할 수 있는 2세대 회전 브라켓",
+    "price": 55802,
+    "url": "https://ko.aliexpress.com/item/1005012455181399.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW+87634%21KRW+55802%21%21KRW+55802%21%21%21%402140f2bd17939728565152916e0f26%2112000060976690832%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "monitor"
+  },
+  {
+    "no": 12,
+    "priority": "Nice",
+    "status": "장바구니",
+    "shortTitle": "6인승 시트 등받이 가죽 보호 매트 (타입 A)",
+    "fullName": "테슬라 모델 YL 6인승 2026년형 차량용 시트 등받이 보호 패드, 킥 방지 및 긁힘 방지 기능, 가죽 소재, 전체를 감싸는 시트 등받이 보호 매트",
+    "category": "발매트 · 시트보호",
+    "models": [
+      "YL 6인승 (2026)"
+    ],
+    "store": "AliExpress",
+    "summary": "아이들이 발로 차도 오염과 긁힘 걱정 없는 풀커버 가죽 시트 등받이 안티킥 패드",
+    "price": 19400,
+    "url": "https://ko.aliexpress.com/item/1005012524028320.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&sourceType=570&pdp_npi=6%40dis%21KRW%21KRW+44277%21KRW+19400%21%21KRW+19400%21%21%21%402140f2bd17939728565152916e0f26%2112000058591547134%21ct%21KR%212222907402%21%211%210%21&pdp_ext_f=%7B%22cart2PdpParams%22%3A%7B%22sourceType%22%3A%22570%22%2C%22cartSource%22%3A%22main%22%7D%7D&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "user-check"
+  },
+  {
+    "no": 13,
+    "priority": "Nice",
+    "status": "장바구니",
+    "shortTitle": "6인승 시트 뒷면 풀커버 가죽 보호 패드 (타입 B)",
+    "fullName": "테슬라 모델 Y 주니퍼 YL 6인승 차량용 시트 뒷면 보호 패드, 가죽 소재, 전체를 감싸는 디자인, 킥 방지 및 긁힘 방지 기능",
+    "category": "발매트 · 시트보호",
+    "models": [
+      "YL 6인승",
+      "주니퍼"
+    ],
+    "store": "AliExpress",
+    "summary": "시트 뒷면 전체를 감싸는 고급 가죽 소재의 킥 방지 및 스크래치 보호 매트",
+    "price": 42200,
+    "url": "https://ko.aliexpress.com/item/1005013187284491.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW+72759%21KRW+42200%21%21KRW+42200%21%21%21%402140f2bd17939722037321614e0f26%2112000060504788255%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "user-check"
+  },
+  {
+    "no": 14,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "리어 도어 비상 안전 탈출 풀 로프 스트립",
+    "fullName": "슬라 모델 3 하이랜드 2025 2026 모델 Y 2022-2026용 리어 도어 비상 안전 풀 로프, 비상 손잡이 스트립 액세서리",
+    "category": "외장 · 안전 · 관리",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "전원 차단 등 비상 상황 시 2열 도어를 수동으로 쉽게 열 수 있도록 돕는 비상 스트랩",
+    "price": 1900,
+    "url": "https://ko.aliexpress.com/item/1005009045114964.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&sourceType=570&pdp_npi=6%40dis%21KRW%21KRW+4519%21KRW+1900%21%21KRW+1900%21%21%21%402140f2bd17939728565152916e0f26%2112000047698514474%21ct%21KR%212222907402%21%211%210%21&pdp_ext_f=%7B%22cart2PdpParams%22%3A%7B%22sourceType%22%3A%22570%22%2C%22cartSource%22%3A%22main%22%7D%7D&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "alert-circle"
+  },
+  {
+    "no": 15,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "YZ 전면 범퍼 카메라 보호 커버",
+    "fullName": "YZ 테슬라 모델 Y 주니퍼 2025의 차량 전면 카메라 보호 흥미로운 자동차 제품 충돌 방지 자동차 액세서리",
+    "category": "외장 · 안전 · 관리",
+    "models": [
+      "주니퍼",
+      "YL"
+    ],
+    "store": "AliExpress",
+    "summary": "주행 중 스톤칩과 이물질로부터 신형 전면 카메라 렌즈 주변을 보호하는 액세서리",
+    "price": 9650,
+    "url": "https://ko.aliexpress.com/item/1005010288514191.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&sourceType=570&pdp_npi=6%40dis%21KRW%21KRW+20087%21KRW+9650%21%21KRW+9650%21%21%21%402140f2bd17939728565152916e0f26%2112000051801648381%21ct%21KR%212222907402%21%211%210%21&pdp_ext_f=%7B%22cart2PdpParams%22%3A%7B%22sourceType%22%3A%22570%22%2C%22cartSource%22%3A%22main%22%7D%7D&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "camera"
+  },
+  {
+    "no": 16,
+    "priority": "Nice",
+    "status": "장바구니",
+    "shortTitle": "샤오미 미지아(MIJIA) 21kPa 무선 차량용 청소기",
+    "fullName": "MIJIA 자동차 진공청소기 21kPa 흡입력, Type-C 고속 충전, 150mL 먼지통, 가정용 무선 진공청소기, 2400mAh 배터리",
+    "category": "외장 · 안전 · 관리",
+    "models": [
+      "전 차종 공용"
+    ],
+    "store": "AliExpress",
+    "summary": "21kPa 강력 흡입력과 C타입 고속 충전을 지원하는 컴팩트 차량·가정 겸용 무선 청소기",
+    "price": 62508,
+    "url": "https://ko.aliexpress.com/item/1005009139287286.html?spm=a2g0o.cart.0.0.2aa35ea263GybJ&mp=1&pdp_npi=6%40dis%21KRW%21KRW+168714%21KRW+62508%21%21KRW+61884%21%21%21%402140f2bd17939732762186871e0f26%2112000048066464995%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "wind"
+  },
+  {
+    "no": 17,
+    "priority": "Nice",
+    "status": "장바구니",
+    "shortTitle": "YZ OBD 듀얼 포트 48W 고속 충전 변환 키트",
+    "fullName": "YZ 테슬라 모델 X S 3 Y YL 하이랜드 주니퍼 OBD 고속 충전기 USB 및 타입-C 듀얼 포트 48W 변환 플러그 키트 자동차 액세서리용",
+    "category": "화면 · 거치 · 충전",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드",
+      "S/X"
+    ],
+    "store": "AliExpress",
+    "summary": "OBD 단자를 활용해 깔끔한 배선 정리와 USB + Type-C 48W 고속 충전을 제공하는 어댑터",
+    "price": 13334,
+    "url": "https://ko.aliexpress.com/item/1005005057320554.html?spm=a2g0o.cart.0.0.2aa35ea2AMWZ3Z&mp=1&pdp_npi=6%40dis%21KRW%21KRW+16360%21KRW+13379%21%21KRW+12905%21%21%21%402140f2bd17939737686314304e0f26%2112000031486070123%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "battery-charging"
+  },
+  {
+    "no": 18,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "뒷좌석 슬라이드 레일 보호 커버 (8pcs 세트)",
+    "fullName": "뒷좌석 슬라이드 레일 보호 커버 8pcs 세트",
+    "category": "실내 · 트렁크 보호",
+    "models": [
+      "YL",
+      "주니퍼"
+    ],
+    "store": "AliExpress",
+    "summary": "시트 이동 레일 끝단 금속 노출부를 감싸 발 끼임과 스크래치를 예방하는 8종 캡",
+    "price": 11831,
+    "url": "https://ko.aliexpress.com/item/1005009690197395.html?spm=a2g0o.cart.0.0.2aa35ea2AMWZ3Z&mp=1&pdp_npi=6%40dis%21KRW%21KRW+13292%21KRW+11864%21%21KRW+11459%21%21%21%402140f2bd17939737686314304e0f26%2112000055869943843%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "sliders"
+  },
+  {
+    "no": 19,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "시트 하단 에어컨 통풍구 메쉬 보호 그릴",
+    "fullName": "테슬라 모델 Y YL 2025-2026 시트 아래 에어컨 통풍구 보호 커버 후면 에어벤트 보호 메쉬 그릴 자동차 액세서리",
+    "category": "실내 · 트렁크 보호",
+    "models": [
+      "YL",
+      "주니퍼"
+    ],
+    "store": "AliExpress",
+    "summary": "시트 아래 후면 에어벤트로 동전이나 작은 소품이 들어가는 것을 막아주는 메쉬 커버",
+    "price": 3619,
+    "url": "https://ko.aliexpress.com/item/1005013048636910.html?spm=a2g0o.cart.0.0.2aa35ea2AMWZ3Z&mp=1&pdp_npi=6%40dis%21KRW%21KRW+4429%21KRW+3627%21%21KRW+3627%21%21%21%402140f2bd17939737686314304e0f26%2112000060097763600%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "shield"
+  },
+  {
+    "no": 20,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "YZ 마그네틱 실리콘 차량용 휴대폰 거치대",
+    "fullName": "YZ 마그네틱 실리콘 폰 홀더 테슬라 모델 YL Y 3 주니퍼 하이랜드용 흔들림 방지 강력 자석 아이폰 17 16 15 차량용 거치대",
+    "category": "화면 · 거치 · 충전",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "흔들림 없이 강력하게 고정되는 맥세이프 호환 마그네틱 실리콘 폰 마운트",
+    "price": 11086,
+    "url": "https://ko.aliexpress.com/item/1005013195095384.html?spm=a2g0o.cart.0.0.2aa35ea2AMWZ3Z&mp=1&pdp_npi=6%40dis%21KRW%21KRW+38803%21KRW+17849%21%21KRW+17493%21%21%21%402140f2bd17939737686314304e0f26%2112000060497979678%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "다른 타입도 추가 검토 필요, 무선 충전기 별도 구입 필요",
+    "icon": "smartphone"
+  },
+  {
+    "no": 21,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "중앙 디스플레이 실리콘 보호 프레임 커버",
+    "fullName": "테슬라 모델 Y/YL 주니퍼 2026용 실리콘 보호 프레임, 중앙 제어 디스플레이 및 내비게이션 화면 보호 커버",
+    "category": "화면 · 거치 · 충전",
+    "models": [
+      "YL",
+      "주니퍼 (2026)"
+    ],
+    "store": "AliExpress",
+    "summary": "내비게이션 화면 테두리 엣지 충격 방지 및 실내 포인트를 주는 실리콘 베젤 가드",
+    "price": 2860,
+    "url": "https://ko.aliexpress.com/item/1005013250902185.html?spm=a2g0o.cart.0.0.2aa35ea2D8sja4&mp=1&pdp_npi=6%40dis%21KRW%21KRW+6500%21KRW+2860%21%21KRW+2860%21%21%21%402140f2bd17939740536443180e0f26%2112000060615389945%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "tablet"
+  },
+  {
+    "no": 22,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "모델 YL 전용 무타공 TPE 앞뒤 머드 플랩",
+    "fullName": "테슬라 신형 모델 YL 2026 TPE 앞뒤 바퀴 머드 플랩 무타공 모든 날씨용 눈/모래 방지 가드 보호대",
+    "category": "외장 · 안전 · 관리",
+    "models": [
+      "YL (2026)"
+    ],
+    "store": "AliExpress",
+    "summary": "차체 타공 없이 순정 홀에 장착하여 흙탕물과 돌튐으로부터 하부 도장을 보호하는 머드가드",
+    "price": 15197,
+    "url": "https://ko.aliexpress.com/item/1005012082759872.html?spm=a2g0o.cart.0.0.2aa35ea2D8sja4&mp=1&pdp_npi=6%40dis%21KRW%21KRW+41115%21KRW+15197%21%21KRW+15197%21%21%21%402140f2bd17939740536443180e0f26%2112000057489138883%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "truck"
+  },
+  {
+    "no": 23,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "YZ 45W 급속 충전 콘솔 확장 USB 도킹 허브",
+    "fullName": "YZ 새로운 테슬라 모델 3/Y/YL 하이랜드 주니퍼 2025 45W 급속 충전기 확장 도크 USB 션트 허브 지능형 도킹 스테이션 자동차 어댑터 전원 액세서리용",
+    "category": "화면 · 거치 · 충전",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "센터 콘솔과 일체감 있게 결합되어 45W 급속 충전과 다중 포트를 제공하는 지능형 허브",
+    "price": 21346,
+    "url": "https://ko.aliexpress.com/item/1005009614406685.html?spm=a2g0o.cart.0.0.2aa35ea2D8sja4&mp=1&pdp_npi=6%40dis%21KRW%21KRW+53471%21KRW+21346%21%21KRW+21346%21%21%21%402140f2bd17939741876086584e0f26%2112000049658622432%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "cpu"
+  },
+  {
+    "no": 24,
+    "priority": "Nice",
+    "status": "장바구니",
+    "shortTitle": "YZ 중앙 스크린 하단 수납함 & 티슈 오거나이저",
+    "fullName": "YZ 테슬라 모델 3/Y/YL 하이랜드 주니퍼 2021-2026 오거나이저 액세서리 중앙 제어 화면 보관함 보관함 티슈 박스 보관 액세서리용",
+    "category": "수납 · 정리",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "모니터 아래 데드스페이스를 활용해 티슈와 자주 쓰는 소품을 깔끔히 수납하는 트레이",
+    "price": 22750,
+    "url": "https://ko.aliexpress.com/item/1005007560069941.html?spm=a2g0o.productlist.main.9.6b512466P7O2MW&algo_pvid=4abed35d-5f97-4cfb-857d-c75f3a123a5e&algo_exp_id=4abed35d-5f97-4cfb-857d-c75f3a123a5e-8&pdp_ext_f=%7B%22order%22%3A%223360%22%2C%22spu_best_type%22%3A%22price%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21KRW%2127071%2122750%21%21%2119.39%2116.30%21%402141137e17939744599087167e0da2%2112000047498521684%21sea%21KR%212222907402%21X%211%210%21n_tag%3A-29919%3Bd%3A507d4460%3Bm03_new_user%3A-29895&curPageLogUid=sMuUEVlpKmd8&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007560069941%7C_p_origin_prod%3A",
+    "option": "",
+    "icon": "inbox"
+  },
+  {
+    "no": 25,
+    "priority": "Nice",
+    "status": "장바구니",
+    "shortTitle": "YZ 360도 회전 금속 마그네틱 휴대폰 거치대",
+    "fullName": "YZ 테슬라 모델 3 Y/YL 하이랜드 주니퍼 마그네틱 자동차 휴대폰 홀더 360도 회전 금속 자동차 장착용 모든 휴대폰용",
+    "category": "화면 · 거치 · 충전",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "360도 자유로운 각도 조절과 메탈 바디의 견고함을 갖춘 마그네틱 스마트폰 홀더",
+    "price": 21807,
+    "url": "https://ko.aliexpress.com/item/1005008529747643.html?aff_fcid=079c1010c5b94f38a99a5c4122ee55ea-1793974804422-08904-_c4lXQhHz&tt=CPS_NORMAL&aff_fsk=_c4lXQhHz&aff_platform=shareComponent-detail&sk=_c4lXQhHz&aff_trace_key=079c1010c5b94f38a99a5c4122ee55ea-1793974804422-08904-_c4lXQhHz&terminal_id=b5dabf8868e64e68bfdcdfa7f61a5bce&afSmartRedirect=y",
+    "option": "",
+    "icon": "compass"
+  },
+  {
+    "no": 26,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "6인승 TPE 트렁크 매트 & 테일게이트 보호패드",
+    "fullName": "테슬라 모델 YL 6인승 2026 TPE 트렁크매트 사계절 카고라이너 테일게이트 보호패드 내마모 차량용품 인테리어 액세서리",
+    "category": "실내 · 트렁크 보호",
+    "models": [
+      "YL 6인승 (2026)"
+    ],
+    "store": "AliExpress",
+    "summary": "6인승 모델 YL 규격에 맞춘 사계절 방수·내마모 TPE 카고 라이너 및 테일게이트 가드",
+    "price": 17400,
+    "url": "https://www.aliexpress.com/item/1005013205361135.html",
+    "option": "",
+    "icon": "box"
+  },
+  {
+    "no": 27,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "아임반 더비전코트 16인치 저반사 보호필름 (1+2열)",
+    "fullName": "아임반 더비전코트 차량용 디스플레이 액정 네비게이션 보호 필름 지문방지 테슬라 모델 YL(16인치), 저반사(1열+2열 세트)",
+    "category": "화면 · 거치 · 충전",
+    "models": [
+      "YL (16인치)"
+    ],
+    "store": "네이버 브랜드스토어",
+    "summary": "빛 반사와 지문을 줄여 시인성을 높여주는 1열 16인치 + 2열 디스플레이 보호필름 세트",
+    "price": 19120,
+    "url": "https://brand.naver.com/aimban/products/13798335805?nl-ts-pid=jX3DlsqosZzUUWReLfd-205885&n_media=27758&n_query=YL%EC%95%A1%EC%A0%95%EB%B3%B4%ED%98%B8%ED%95%84%EB%A6%84&n_rank=3&n_ad_group=grp-a001-02-000000071407563&n_ad=nad-a001-02-000000600082889&n_campaign_type=2&n_mall_id=aimban2015&n_mall_pid=13798335805&n_ad_group_type=2&n_match=3&NaPm=ct%3Dmw52szmt%7Cci%3DER37693a3d%2Dd9ef%2D11f1%2D85ed%2Dc2abe943b396%7Ctr%3Dpla%7Chk%3D4c91fae26809c010b668a7a81868e3f1a4708efe%7Cnacn%3D4YiIBow2mNNn",
+    "option": "",
+    "icon": "eye"
+  },
+  {
+    "no": 28,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "6인승 롱 휠베이스 팔걸이 숨김형 자석 수납함",
+    "fullName": "테슬라 모델 Y L YL 2026 롱 휠베이스 6인승용 팔걸이 숨김형 자석 수납함 콘솔 정리 트레이 실리콘 매트",
+    "category": "수납 · 정리",
+    "models": [
+      "YL 6인승 (2026)"
+    ],
+    "store": "AliExpress",
+    "summary": "모델 YL 6인승 전용 팔걸이 및 콘솔 내부 공간을 세분화하는 자석식 수납 트레이와 매트",
+    "price": 30372,
+    "url": "https://ko.aliexpress.com/item/1005013110926783.html?gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "archive"
+  },
+  {
+    "no": 29,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "YZ 센터 암레스트 숨겨진 보관함 & 컵홀더 트레이",
+    "fullName": "YZ 적용 테슬라 모델 3 하이랜드 2024-2026 모델 Y/YL 주니퍼 2021-2026 센터 암레스트 숨겨진 보관함 컵 홀더 콘솔 정리함 액세서리용",
+    "category": "수납 · 정리",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "암레스트 안쪽 비밀 수납공간과 컵홀더·콘솔 정리를 한 번에 해결하는 오거나이저",
+    "price": 26554,
+    "url": "https://ko.aliexpress.com/item/1005003792538781.html?spm=a2g0o.cart.0.0.70255ea2tl5pwn&mp=1&pdp_npi=6%40dis%21KRW%21KRW+34484%21KRW+26554%21%21KRW+25758%21%21%21%402102eb1417939765376413673e0ccb%2112000056074337228%21ct%21KR%212222907402%21%211%210%21&gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "coffee"
+  },
+  {
+    "no": 30,
+    "priority": "Must",
+    "status": "장바구니",
+    "shortTitle": "YZ 15.4/16인치 전면 & 8인치 후면 매트 강화유리",
+    "fullName": "YZ 테슬라 모델 Y/YL 주니퍼 2025-2026 모델 3 하이랜드 2024-2026 15.4인치 및 16인치 내비게이션용 매트 강화 유리 스크린 프로텍터 및 8인치 후면 스크린 매트 HD 센터 컨트롤 터치 스크린 프로텍터",
+    "category": "화면 · 거치 · 충전",
+    "models": [
+      "YL",
+      "주니퍼",
+      "하이랜드"
+    ],
+    "store": "AliExpress",
+    "summary": "부드러운 터치감과 눈부심 방지 기능을 갖춘 1열·2열 매트 HD 강화유리 프로텍터",
+    "price": 27350,
+    "url": "https://ko.aliexpress.com/item/1005007020941531.html?gatewayAdapt=glo2kor",
+    "option": "",
+    "icon": "maximize"
+  }
+];
+
+    const CATEGORIES = [
+      "전체",
+      "발매트 · 시트보호",
+      "실내 · 트렁크 보호",
+      "수납 · 정리",
+      "화면 · 거치 · 충전",
+      "차양 · 인테리어",
+      "외장 · 안전 · 관리"
+    ];
+
+    // Load saved status from localStorage if available
+    let items = INITIAL_ITEMS.map(item => {
+      const savedStatus = localStorage.getItem(`soir_yl_status_${item.no}`);
+      return {
+        ...item,
+        status: savedStatus ? savedStatus : item.status
+      };
+    });
+
+    let currentCategory = "전체";
+    let currentPriority = "all";
+    let currentStatus = "all";
+    let currentSearch = "";
+    let currentView = "card";
+
+    function formatPrice(num) {
+      return num.toLocaleString("ko-KR") + "원";
+    }
+
+    function updateDashboard() {
+      const totalCount = items.length;
+      const totalPrice = items.reduce((acc, i) => acc + i.price, 0);
+
+      const mustItems = items.filter(i => i.priority === "Must");
+      const mustPrice = mustItems.reduce((acc, i) => acc + i.price, 0);
+
+      const doneItems = items.filter(i => i.status === "구매 완료");
+      const donePrice = doneItems.reduce((acc, i) => acc + i.price, 0);
+
+      const cartItems = items.filter(i => i.status === "장바구니");
+      const cartPrice = cartItems.reduce((acc, i) => acc + i.price, 0);
+
+      const mustCartItems = items.filter(i => i.priority === "Must" && i.status === "장바구니");
+      const mustCartPrice = mustCartItems.reduce((acc, i) => acc + i.price, 0);
+
+      document.getElementById("count-all").textContent = `${totalCount}개`;
+      document.getElementById("price-all").textContent = formatPrice(totalPrice);
+
+      document.getElementById("count-must").textContent = `${mustItems.length}개`;
+      document.getElementById("price-must").textContent = formatPrice(mustPrice);
+
+      document.getElementById("count-done").textContent = `${doneItems.length}개`;
+      document.getElementById("price-done").textContent = formatPrice(donePrice);
+
+      const donePercent = totalPrice > 0 ? ((donePrice / totalPrice) * 100).toFixed(1) : 0;
+      const mustCartPercent = totalPrice > 0 ? ((mustCartPrice / totalPrice) * 100).toFixed(1) : 0;
+
+      document.getElementById("sub-done").textContent = `진행률 ${donePercent}% (${doneItems.length}/${totalCount}개)`;
+      document.getElementById("count-cart").textContent = `${cartItems.length}개`;
+      document.getElementById("price-cart").textContent = formatPrice(cartPrice);
+
+      document.getElementById("progress-text").textContent =
+        `금액 기준 ${donePercent}% 완료 (${formatPrice(donePrice)} / ${formatPrice(totalPrice)})`;
+      document.getElementById("bar-done").style.width = `${donePercent}%`;
+      document.getElementById("bar-must").style.width = `${mustCartPercent}%`;
+    }
+
+    function renderCategoryPills() {
+      const container = document.getElementById("categoryPills");
+      container.innerHTML = CATEGORIES.map(cat => {
+        const count = cat === "전체"
+          ? items.length
+          : items.filter(i => i.category === cat).length;
+        const activeClass = currentCategory === cat ? "active" : "";
+        return `
+          <button class="cat-pill ${activeClass}" onclick="setCategoryFilter('${cat}')">
+            <span>${cat}</span>
+            <span class="cat-count">${count}</span>
+          </button>
+        `;
+      }).join("");
+    }
+
+    function getFilteredItems() {
+      const q = currentSearch.trim().toLowerCase();
+      let filtered = items.filter(item => {
+        if (currentCategory !== "전체" && item.category !== currentCategory) return false;
+        if (currentPriority !== "all" && item.priority !== currentPriority) return false;
+        if (currentStatus !== "all" && item.status !== currentStatus) return false;
+        if (q) {
+          const hay = `${item.no} ${item.shortTitle} ${item.fullName} ${item.summary} ${item.option} ${item.category} ${item.store} ${item.models.join(" ")}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      const sortVal = document.getElementById("sortSelect").value;
+      if (sortVal === "no-asc") {
+        filtered.sort((a, b) => a.no - b.no);
+      } else if (sortVal === "price-desc") {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sortVal === "price-asc") {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortVal === "must-first") {
+        filtered.sort((a, b) => {
+          if (a.priority === b.priority) return a.no - b.no;
+          return a.priority === "Must" ? -1 : 1;
+        });
+      }
+      return filtered;
+    }
+
+    function toggleItemStatus(no) {
+      const target = items.find(i => i.no === no);
+      if (!target) return;
+      target.status = target.status === "구매 완료" ? "장바구니" : "구매 완료";
+      localStorage.setItem(`soir_yl_status_${no}`, target.status);
+      updateDashboard();
+      renderProducts();
+    }
+
+    function resetSavedStatus() {
+      INITIAL_ITEMS.forEach(item => {
+        localStorage.removeItem(`soir_yl_status_${item.no}`);
+      });
+      items = INITIAL_ITEMS.map(item => ({ ...item }));
+      updateDashboard();
+      renderProducts();
+    }
+
+    function renderProducts() {
+      const filtered = getFilteredItems();
+      const sumFiltered = filtered.reduce((acc, i) => acc + i.price, 0);
+
+      document.getElementById("resultsInfo").innerHTML =
+        `조회된 제품 <strong>${filtered.length}개</strong> · 선택 조건 합계 <strong>${formatPrice(sumFiltered)}</strong>`;
+
+      const emptyEl = document.getElementById("emptyState");
+      const gridEl = document.getElementById("productsGrid");
+      const tableWrapEl = document.getElementById("tableWrapper");
+      const tableBodyEl = document.getElementById("tableBody");
+
+      if (filtered.length === 0) {
+        emptyEl.style.display = "block";
+        gridEl.style.display = "none";
+        tableWrapEl.style.display = "none";
+        return;
+      }
+
+      emptyEl.style.display = "none";
+      if (currentView === "card") {
+        gridEl.style.display = "grid";
+        tableWrapEl.style.display = "none";
+      } else {
+        gridEl.style.display = "none";
+        tableWrapEl.style.display = "block";
+      }
+
+      // Render Cards
+      gridEl.innerHTML = filtered.map(item => {
+        const isDone = item.status === "구매 완료";
+        const isMust = item.priority === "Must";
+        const storeClass = item.store.includes("네이버") ? "store-naver" : "store-ali";
+        const modelBadges = item.models.map(m => `<span class="model-tag">${m}</span>`).join("");
+        const optionBlock = item.option
+          ? `<div class="card-option-box"><span class="card-option-label">옵션 · 검토 메모</span>${item.option}</div>`
+          : "";
+
+        return `
+          <article class="product-card ${isDone ? 'is-done' : ''}" id="item-card-${item.no}">
+            <div>
+              <div class="card-top">
+                <div class="badge-group">
+                  <span class="no-badge">No.${item.no}</span>
+                  <span class="priority-badge ${isMust ? 'priority-must' : 'priority-nice'}">${item.priority}</span>
+                  <span class="no-badge">${item.category}</span>
+                </div>
+                <button class="status-btn ${isDone ? 'status-done' : 'status-cart'}" onclick="toggleItemStatus(${item.no})" title="클릭하여 구매 완료 / 장바구니 전환">
+                  <span>${isDone ? '✓ 구매 완료' : '🛒 장바구니'}</span>
+                </button>
+              </div>
+
+              <div class="card-body" style="margin-top: 14px;">
+                <div class="card-meta-tags">
+                  ${modelBadges}
+                  <span class="store-tag ${storeClass}">${item.store}</span>
+                </div>
+                <h3 class="card-title">${item.shortTitle}</h3>
+                <p class="card-summary">${item.summary}</p>
+                <div class="card-fullname" title="첨부 문서 원본 상품명">${item.fullName}</div>
+                ${optionBlock}
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <div class="price-block">
+                <span class="price-label">${item.store} 기준가</span>
+                <span class="price-val">${formatPrice(item.price)}</span>
+              </div>
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="buy-link">
+                <span>구매처 보기</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      // Render Table Rows
+      tableBodyEl.innerHTML = filtered.map(item => {
+        const isDone = item.status === "구매 완료";
+        const isMust = item.priority === "Must";
+        return `
+          <tr>
+            <td><strong>${item.no}</strong></td>
+            <td><span class="priority-badge ${isMust ? 'priority-must' : 'priority-nice'}">${item.priority}</span></td>
+            <td>
+              <button class="status-btn ${isDone ? 'status-done' : 'status-cart'}" onclick="toggleItemStatus(${item.no})">
+                ${isDone ? '✓ 구매 완료' : '🛒 장바구니'}
+              </button>
+            </td>
+            <td style="white-space:nowrap; color:var(--text-secondary); font-weight:600;">${item.category}</td>
+            <td>
+              <div style="font-weight:700; margin-bottom:2px;">${item.shortTitle}</div>
+              <div style="font-size:0.76rem; color:var(--text-muted);">${item.fullName}</div>
+            </td>
+            <td style="white-space:pre-line; font-size:0.8rem; color:var(--text-secondary);">${item.option || '-'}</td>
+            <td style="text-align:right; font-weight:800; white-space:nowrap;">${formatPrice(item.price)}</td>
+            <td style="text-align:center; white-space:nowrap;">
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="outline-btn" style="padding:5px 11px; font-size:0.76rem;">링크 ↗</a>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function setCategoryFilter(cat) {
+      currentCategory = cat;
+      renderCategoryPills();
+      renderProducts();
+    }
+
+    function setPriorityFilter(priority) {
+      currentPriority = priority;
+      document.querySelectorAll("[data-priority]").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-priority") === priority);
+      });
+      renderProducts();
+    }
+
+    function setStatusFilter(status) {
+      currentStatus = status;
+      document.querySelectorAll("[data-status]").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-status") === status);
+      });
+      renderProducts();
+    }
+
+    function applyQuickStatFilter(mode) {
+      document.querySelectorAll(".stat-card").forEach(el => el.classList.remove("active-stat"));
+      if (mode === "all") {
+        setPriorityFilter("all");
+        setStatusFilter("all");
+        document.getElementById("stat-all").classList.add("active-stat");
+      } else if (mode === "Must") {
+        setPriorityFilter("Must");
+        setStatusFilter("all");
+        document.getElementById("stat-must").classList.add("active-stat");
+      } else if (mode === "구매 완료") {
+        setPriorityFilter("all");
+        setStatusFilter("구매 완료");
+        document.getElementById("stat-done").classList.add("active-stat");
+      } else if (mode === "장바구니") {
+        setPriorityFilter("all");
+        setStatusFilter("장바구니");
+        document.getElementById("stat-cart").classList.add("active-stat");
+      }
+      document.getElementById("products-section").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function setViewMode(mode) {
+      currentView = mode;
+      document.getElementById("btnCardView").classList.toggle("active", mode === "card");
+      document.getElementById("btnTableView").classList.toggle("active", mode === "table");
+      renderProducts();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById("searchInput");
+      input.value = "";
+      currentSearch = "";
+      document.getElementById("clearSearchBtn").style.display = "none";
+      renderProducts();
+    }
+
+    function resetAllFilters() {
+      currentCategory = "전체";
+      currentPriority = "all";
+      currentStatus = "all";
+      currentSearch = "";
+      document.getElementById("searchInput").value = "";
+      document.getElementById("clearSearchBtn").style.display = "none";
+      document.getElementById("sortSelect").value = "no-asc";
+      document.querySelectorAll(".stat-card").forEach(el => el.classList.remove("active-stat"));
+      setPriorityFilter("all");
+      setStatusFilter("all");
+      renderCategoryPills();
+      renderProducts();
+    }
+
+    function focusItemByNo(no) {
+      resetAllFilters();
+      setViewMode("card");
+      setTimeout(() => {
+        const el = document.getElementById(`item-card-${no}`);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          el.style.outline = "3px solid var(--cart-text)";
+          setTimeout(() => { el.style.outline = "none"; }, 2500);
+        }
+      }, 100);
+    }
+
+    // Event Listeners
+    document.getElementById("searchInput").addEventListener("input", e => {
+      currentSearch = e.target.value;
+      document.getElementById("clearSearchBtn").style.display = currentSearch ? "block" : "none";
+      renderProducts();
+    });
+
+    const themeBtn = document.getElementById("themeToggle");
+    themeBtn.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+        themeBtn.textContent = "🌙";
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeBtn.textContent = "☀️";
+      }
+    });
+
+    // Initialize
+    updateDashboard();
+    renderCategoryPills();
+    renderProducts();
+  </script>
+</body>
+</html>
